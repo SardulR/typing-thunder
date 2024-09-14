@@ -1,0 +1,170 @@
+ body {
+    background-color: #1A1A1A;
+  }
+  
+  .content {
+    margin: 32px 120px;
+  }
+  
+  .wrapper {
+    display: inline-flex;
+     align-items: center;
+    
+  }
+  
+  .wrapper .static-txt {
+    font-size: 30px;
+    color:  #B3B3B3;
+    font-weight: 400;
+    
+  }
+  
+  .wrapper .dynamic-txts {
+    margin-left: 10px;
+    height: 35px;
+    line-height: 36px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dynamic-txts li {
+    color: #fff;
+    list-style: none;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 3s steps(2) infinite ;
+  }
+  
+  
+   .entryarea{
+    position: relative;
+    
+    height: 50px;
+    line-height: 50px;
+
+   }
+   .textarea{
+    position:absolute;
+    width:100%;
+    outline: none;
+    font-size: 20px;
+    /* padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left:8px ;
+    padding-right: 8px; */
+    color:#fff;
+    padding: 0 17px;
+    line-height: 50px;
+    background: transparent;
+    border-radius: 20px;
+    border:2px solid white;
+    transition: 0.1s ease;
+    z-index:1111;
+   }
+  
+   .labelline{
+    position: absolute;
+    font-size: 15px;
+    padding: 0 17px;
+    color:#fff;
+    transition: 0.2s ease;
+    background-color: #1A1A1A;
+    transition: 0.2s ease;
+    font-weight: 300px;
+   }
+
+    input:focus
+    input:valid  {
+      color:white
+    }
+
+    input:focus + .labelline,
+    input:valid + .labelline{
+      color:white;
+      height:30px;
+      line-height:30px;
+      transform: translate(-15px, -16px) scale(0.88);
+      z-index: 1111;
+    }
+   @keyframes slide {
+    100% {
+      top: -72px; 
+    }
+  } 
+  
+  .dynamic-txts li span {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background: #1A1A1A;
+    border-left: 2px solid #fff;
+    animation: typing 1.5s steps(6) infinite;
+   
+  }
+  
+  @keyframes typing {
+   
+    100% {
+      left: 100%;
+      margin:0 -35px 0 35px;
+    
+    }
+
+ }
+
+ @media (max-width: 1200px) {
+  .content {
+    margin: 32px 60px;
+  }
+
+  .wrapper .static-txt, .dynamic-txts li {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    margin: 32px 40px;
+  }
+
+  .wrapper .static-txt, .dynamic-txts li {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .content {
+    margin: 32px 20px;
+  } */
+
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wrapper .static-txt, .dynamic-txts li {
+    font-size: 24px;
+  }
+
+  .dynamic-txts {
+    margin-left: 0;
+    margin-top: 10px;
+    height: 24px;
+    line-height: 24px;
+  }
+}
+
+
+
+/* translate(5px, 5px) */
